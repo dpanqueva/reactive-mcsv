@@ -16,7 +16,7 @@ public class ProfessionServiceImpl implements ProfessionService {
 
     @Override
     public Mono<Profession> createProfession(Profession profession) {
-        return Mono.just(profession).flatMap(professionRepository::save);
+        return professionRepository.save(profession);
     }
 
     @Override
